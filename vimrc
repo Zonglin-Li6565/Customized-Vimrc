@@ -52,6 +52,7 @@ set shiftround
 
 set ttimeout
 set ttimeoutlen=50
+set splitbelow
 
 set incsearch
 " Use <C-L> to clear the highlighting of :set hlsearch.
@@ -153,15 +154,20 @@ inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-b>  :tabprevious<CR>
-inoremap <C-b>  <Esc>:tabprevious<CR>i
-nnoremap <C-n>  :tabnext<CR>
-inoremap <C-n>  <Esc>:tabnext<CR>i
+nnoremap <C-j>  <C-W>j
+inoremap <C-j>  <C-W>j
+nnoremap <C-k>  <C-W>k
+inoremap <C-k>  <C-W>k
+nnoremap <C-h>  :tabprevious<CR>
+inoremap <C-h>  <Esc>:tabprevious<CR>i
+nnoremap <C-l>  :tabnext<CR>
+inoremap <C-l>  <Esc>:tabnext<CR>i
 nnoremap <C-t>  :tabnew<CR>
 inoremap <C-t>  <Esc>:tabnew<CR>i
-nnoremap <C-k>  :tabclose<CR>
-inoremap <C-k>  <Esc>:tabclose<CR>i
+nnoremap <C-d>  :tabclose<CR>
+inoremap <C-d>  <Esc>:tabclose<CR>i
 nnoremap qqq    :q <CR>
+nnoremap qqqq   :q! <CR>
 nnoremap www    :w <CR>
 
 " lazy ':'
