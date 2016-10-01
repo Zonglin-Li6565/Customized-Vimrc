@@ -121,6 +121,7 @@ let g:UltiSnipsExpandTrigger="<f1>"
 let g:UltiSnipsJumpForwardTrigger="<f1>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:did_UltiSnips_vim_after = 1
+let g:her_python_interpreter = "/usr/bin/python3"
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -154,10 +155,10 @@ inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-j>  <C-W>j
-inoremap <C-j>  <C-W>j
-nnoremap <C-k>  <C-W>k
-inoremap <C-k>  <C-W>k
+nnoremap <C-j>  <C-W>h
+inoremap <C-j>  <C-W>h
+nnoremap <C-k>  <C-W>l
+inoremap <C-k>  <C-W>l
 nnoremap <C-h>  :tabprevious<CR>
 inoremap <C-h>  <Esc>:tabprevious<CR>i
 nnoremap <C-l>  :tabnext<CR>
