@@ -183,3 +183,6 @@ noremap  <Leader>g :GitGutterToggle<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+"  hange the background to transparent
+hi Normal ctermbg=none
