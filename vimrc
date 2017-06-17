@@ -2,6 +2,12 @@
 "               http://github.com/grigio/vim-sublime
 " Best view with a 256 color terminal and Powerline fonts
 " Updated by Dorian Neto (https://github.com/dorianneto)"
+"
+
+"" The color themes
+set background=dark
+set termguicolors
+"""""""""""""""""""
 
 set nocompatible
 filetype off
@@ -23,12 +29,14 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'https://github.com/fneu/breezy.git'
+
+set runtimepath^=~/.vim/bundle/breezy
 
 " Color Themes
-Plugin 'flazz/vim-colorschemes'
+colorscheme breezy
 
 call vundle#end()
-colorscheme Monokai
 filetype plugin indent on
 
 """"""""
@@ -55,6 +63,8 @@ set ttimeoutlen=50
 set splitbelow
 
 set incsearch
+
+set clipboard+=unnamedplus
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
@@ -127,6 +137,9 @@ let g:her_python_interpreter = "/usr/bin/python3"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" vimrc
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
 "
 " Basic shortcuts definitions
 "  most in visual mode / selection (v or ⇧ v)
@@ -167,9 +180,6 @@ nnoremap <C-t>  :tabnew<CR>
 inoremap <C-t>  <Esc>:tabnew<CR>i
 nnoremap <C-d>  :tabclose<CR>
 inoremap <C-d>  <Esc>:tabclose<CR>i
-nnoremap qqq    :q <CR>
-nnoremap qqqq   :q! <CR>
-nnoremap www    :w <CR>
 
 " lazy ':'
 map \ :
@@ -186,3 +196,4 @@ endif
 
 "  hange the background to transparent
 hi Normal ctermbg=none
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
