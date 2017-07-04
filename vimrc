@@ -30,6 +30,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'https://github.com/fneu/breezy.git'
+Plugin 'https://github.com/tpope/vim-fugitive.git'
 
 set runtimepath^=~/.vim/bundle/breezy
 
