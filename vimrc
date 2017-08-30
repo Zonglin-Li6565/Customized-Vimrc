@@ -7,6 +7,7 @@
 "" The color themes
 set background=dark
 set termguicolors
+set cc=80
 """""""""""""""""""
 
 set nocompatible
@@ -30,6 +31,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'https://github.com/fneu/breezy.git'
+Plugin 'https://github.com/tpope/vim-fugitive.git'
 
 set runtimepath^=~/.vim/bundle/breezy
 
@@ -120,13 +122,16 @@ set completeopt=menuone,longest,preview
 "
 
 " NERDTree
-nnoremap <S-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 " Ultisnip
 " NOTE: <f1> otherwise it overrides <tab> forever
+
+let g:loaded_youcompleteme = 1
+
 let g:UltiSnipsExpandTrigger="<f1>"
 let g:UltiSnipsJumpForwardTrigger="<f1>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
