@@ -80,7 +80,7 @@ set wildmenu
 set autoread
 
 set encoding=utf-8
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set listchars=tab:▒░,trail:▓
 set list
 
@@ -150,8 +150,6 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "  most in visual mode / selection (v or ⇧ v)
 "
 
-" Find
-map <C-f> /
 " indend / deindent after selecting the text with (⇧ v), (.) to repeat.
 vnoremap <Tab> >
 vnoremap <S-Tab> <
@@ -183,8 +181,8 @@ nnoremap <C-l>  :tabnext<CR>
 inoremap <C-l>  <Esc>:tabnext<CR>i
 nnoremap <C-t>  :tabnew<CR>
 inoremap <C-t>  <Esc>:tabnew<CR>i
-nnoremap <C-d>  :tabclose<CR>
-inoremap <C-d>  <Esc>:tabclose<CR>i
+nnoremap <C-I> :pyf /usr/share/clang/clang-format.py<cr>
+inoremap <C-I> <c-o>:pyf /usr/share/clang/clang-format.py<cr>
 
 " lazy ':'
 map \ :
@@ -202,3 +200,12 @@ endif
 "  hange the background to transparent
 hi Normal ctermbg=none
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
