@@ -130,6 +130,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 " Ultisnip
 " NOTE: <f1> otherwise it overrides <tab> forever
 
+"let g:loaded_youcompleteme = 1
+
 let g:UltiSnipsExpandTrigger="<f1>"
 let g:UltiSnipsJumpForwardTrigger="<f1>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
