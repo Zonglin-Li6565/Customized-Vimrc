@@ -7,5 +7,5 @@ vim +PluginInstall
 bash ~/temp/powerlinefont/install.sh
 rm -rf ~/temp
 cd ~/.vim/bundle/YouCompleteMe/
-python3 install.py
+python3 install.py --clang-completer
 
