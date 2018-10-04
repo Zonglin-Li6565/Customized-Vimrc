@@ -6,7 +6,6 @@
 
 "" The color themes
 set background=dark
-set termguicolors
 set cc=80
 """""""""""""""""""
 
