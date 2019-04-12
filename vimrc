@@ -101,18 +101,10 @@ endif
 " do not history when leavy buffer
 set hidden
 
-" FIXME: (broken) ctrl s to save
-noremap  <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <Esc>:update<CR>
-
 set nobackup
 set nowritebackup
 set noswapfile
 set fileformats=unix,dos,mac
-
-" exit insert mode
-inoremap <C-c> <Esc>
 
 set completeopt=menuone,longest,preview
 
@@ -158,10 +150,6 @@ vmap <C-m> gc
 let g:tcomment#replacements_xml={}
 " Text wrap simpler, then type the open tag or ',"
 vmap <C-w> S
-" Cut, Paste, Copy
-vmap <C-x> "+d
-vmap <C-v> "+p
-vmap <C-c> "+y
 " Undo, Redo (broken)
 nnoremap <C-z>  :undo<CR>
 inoremap <C-z>  <Esc>:undo<CR>
