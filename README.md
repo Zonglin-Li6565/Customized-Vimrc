@@ -9,6 +9,8 @@ After git clone, install the dependencies
    - `sudo pacman -S base-devel`
 
 Then run the install script by:
+```
 chmod +x install.sh
 ./install.sh
+```
 
